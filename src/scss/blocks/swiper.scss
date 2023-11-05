@@ -1,0 +1,60 @@
+.swiper {
+  display: flex;
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.swiper-wrapper {
+  box-sizing: content-box;
+  max-height: 476px;
+}
+
+.swiper-slide{
+  
+  display: flex !important;
+  justify-content: center;
+}
+.background {
+  position: absolute; /* Фиксированное положение */
+  top: 0;
+  margin: 0 4px;
+  left: 0;
+  width: 319px;
+  height: 319px;
+  background-image: url('/public/images/main.svg'); /* Замените на URL своей подложки */
+  background-size: cover;
+  z-index: -1; /* Задаем отрицательный z-index, чтобы подложка оставалась под контентом */
+}
+.s-button-prev {
+  background-image: url('/public/images/left.svg');
+  background-repeat: no-repeat;
+  max-width:50px;
+  min-height: 50px;
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: -4%;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-button-next {
+    position: absolute;
+    background-image: url('/public/images/right.svg');
+    background-repeat: no-repeat;
+    max-width:50px;
+    min-height: 50px;
+    width: 100%;
+    top: 30%;
+    right: -4%;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

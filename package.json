@@ -1,0 +1,18 @@
+{
+  "name": "magnit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "normalize.css": "^8.0.1",
+    "sass": "^1.69.5",
+    "swiper": "^11.0.3",
+    "vite": "^4.4.5",
+    "vite-plugin-image-optimizer": "^1.1.7"
+  }
+}

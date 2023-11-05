@@ -1,0 +1,87 @@
+.stickers {
+    position: relative;
+    &__wrapper {
+        text-align: center;
+        padding-top: 32px;
+        display: grid;
+        gap: 8px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__button {
+    cursor: pointer;
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      p {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        color: #000;
+      }
+    }
+    &__item {
+        img {
+          max-width: 120px;
+          width: 100%;
+          max-height: 118px;
+          height: 100%;
+        }
+    }
+}
+.stickers__item.hidden {
+  display: none;
+
+}
+.stickers__button .rotate180 {
+  transform: rotate(180deg);
+}
+.sticker {
+    padding-top: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sticker img, .sticker h3, .sticker p {
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .sticker img {
+    width: 100%;
+    max-width: 224px;
+    max-height: 224px;
+    align-items: center;
+    opacity: 0;
+  }
+  
+  .sticker h3, .sticker p {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .swiper-slide-active .sticker img {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .swiper-slide-active .sticker h3, .swiper-slide-active .sticker p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+/* Скрыть кнопки с классом 'hidden' */
+
+
+/* Отобразить 6 элементов на мобильных и планшетных устройствах */
+@media (max-width: 768px) {
+  .stickers__item:nth-child(n+7):not(.hidden) {
+    display: none;
+  }
+}
+
+/* Отобразить все 9 элементов на больших экранах */
+@media (min-width: 769px) {
+  .stickers__item {
+    display: inline-block;
+  }
+}
