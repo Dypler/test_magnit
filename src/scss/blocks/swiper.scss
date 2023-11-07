@@ -26,36 +26,29 @@
   height: 100%;
   max-width: 319px;
   max-height: 319px;
-  // background-image: url('/public/images/main.svg'); /* Замените на URL своей подложки */
-  // background-size: cover;
+
   z-index: -1; 
 }
 .s-button-prev {
-  width:50px;
-  height: 50px;
+
   position: absolute;
   top: 35%;
   left: 50%;
   transform: translate(-11rem, -50%);
   z-index: 10;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+
 }
 
 .s-button-next {
     position: absolute;
-    width:50px;
-    height: 50px;
     top: 35%;
     right: 50%;
-    transform: translate(11rem, -50%);
+    transform: translate(11.5rem, -50%);
     z-index: 10;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
 }
 @media (max-width: 355px) {
   .background {
@@ -66,14 +59,14 @@
 @media (max-width:768px) {
   .s-button-next {
     svg {
-      width: 36px;
-      height: 36px;
+      width: 46px;
+      height: 46px;
     }
   }
   .s-button-prev {
     svg {
-      width: 36px;
-      height: 36px;
+      width: 46px;
+      height: 46px;
     }
   }
 }
