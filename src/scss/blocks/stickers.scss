@@ -1,11 +1,12 @@
 .stickers {
+    margin-top: 64px;
     position: relative;
     &__wrapper {
-        text-align: center;
-        padding-top: 32px;
+        padding-top: 24px;
         display: grid;
         gap: 8px;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 104px);
+        justify-content: center;
     }
     &__button {
     cursor: pointer;
@@ -21,9 +22,9 @@
         color: #000;
       }
     }
+
     &__item {
         img {
-          max-width: 120px;
           width: 100%;
           max-height: 118px;
           height: 100%;
@@ -32,13 +33,12 @@
 }
 .stickers__item.hidden {
   display: none;
-
 }
 .stickers__button .rotate180 {
   transform: rotate(180deg);
 }
 .sticker {
-    padding-top: 55px;
+    justify-content:center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,8 +51,6 @@
     width: 100%;
     max-width: 224px;
     max-height: 224px;
-    align-items: center;
-    opacity: 0;
   }
   
   .sticker h3, .sticker p {
@@ -73,15 +71,52 @@
 
 
 /* Отобразить 6 элементов на мобильных и планшетных устройствах */
-@media (max-width: 768px) {
+
+
+@media (min-width: 768px) {
+  .stickers {
+    &__wrapper {
+      grid-template-columns: repeat(6, 114px);
+    }
+  }
+  .sticker {
+    img {
+      max-width: 318px;
+      max-height: 329px;
+    }
+  }
+}
+/* Отобразить все 9 элементов на больших экранах */
+
+@media (max-width: 1280px) {
   .stickers__item:nth-child(n+7):not(.hidden) {
     display: none;
   }
 }
 
 /* Отобразить все 9 элементов на больших экранах */
-@media (min-width: 769px) {
-  .stickers__item {
+@media (min-width: 1280px) {
+  .stickers__item:nth-child(7),
+  .stickers__item:nth-child(8),
+  .stickers__item:nth-child(9) {
     display: inline-block;
+  }
+  .stickers__wrapper {
+    padding-top: 64px;
+    grid-template-columns: repeat(9, 120px);
+  }
+  .sticker {
+    padding-top: 55px;
+
+    gap: 193px;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: flex-start;
+    &__info {
+      margin-top: 24px;
+      max-width: 574px;
+      width: 100%;
+    }
   }
 }

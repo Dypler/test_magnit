@@ -17,25 +17,26 @@
   justify-content: center;
 }
 .background {
-  position: absolute; /* Фиксированное положение */
-  top: 0;
   margin: 0 4px;
-  left: 0;
-  width: 319px;
-  height: 319px;
-  background-image: url('/public/images/main.svg'); /* Замените на URL своей подложки */
-  background-size: cover;
-  z-index: -1; /* Задаем отрицательный z-index, чтобы подложка оставалась под контентом */
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  max-width: 319px;
+  max-height: 319px;
+  // background-image: url('/public/images/main.svg'); /* Замените на URL своей подложки */
+  // background-size: cover;
+  z-index: -1; 
 }
 .s-button-prev {
-  background-image: url('/public/images/left.svg');
-  background-repeat: no-repeat;
-  max-width:50px;
-  min-height: 50px;
-  width: 100%;
+  width:50px;
+  height: 50px;
   position: absolute;
-  top: 30%;
-  left: -4%;
+  top: 35%;
+  left: 50%;
+  transform: translate(-11rem, -50%);
   z-index: 10;
   cursor: pointer;
   display: flex;
@@ -45,16 +46,79 @@
 
 .s-button-next {
     position: absolute;
-    background-image: url('/public/images/right.svg');
-    background-repeat: no-repeat;
-    max-width:50px;
-    min-height: 50px;
-    width: 100%;
-    top: 30%;
-    right: -4%;
+    width:50px;
+    height: 50px;
+    top: 35%;
+    right: 50%;
+    transform: translate(11rem, -50%);
     z-index: 10;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+@media (max-width: 355px) {
+  .background {
+    transform: translate(-52%, -50%);
+
+  }
+}
+@media (max-width:768px) {
+  .s-button-next {
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  .s-button-prev {
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+@media (min-width:768px) {
+  .swiper-wrapper {
+    max-height: 670px;
+  }
+  .s-button-next {
+    transform: translate(22rem, -50%);
+    svg {
+      width: 54px;
+      height: 54px;
+    }
+  }
+  .s-button-prev {
+    transform: translate(-22rem, -50%);
+    svg {
+      width: 54px;
+      height: 54px;
+    }
+  }
+  .background {
+    max-width: 467px;
+    max-height: 467px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .swiper-wrapper {
+    max-height: 467px;
+
+  }
+  .swiper {
+    max-width: 1150px;
+  }
+  .swiper-slide {
+    max-width: 1150px;
+    width: 100%;
+  }
+  .background {
+    transform: translate(22%, -35%);
+  }
+  .s-button-next {
+    transform: translate(36.9rem, 75%);  }
+  .s-button-prev {
+    transform: translate(6rem, 75%);
+  }
 }
